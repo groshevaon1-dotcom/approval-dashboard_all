@@ -1,0 +1,10 @@
+# Доступ по паролю (Basic Auth). Путь к .htpasswd заполнить при деплое на Beget:
+AuthType Basic
+AuthName "Радар предоставлений — доступ по паролю"
+AuthUserFile /__ПОЛНЫЙ_ПУТЬ_НА_BEGET__/.htpasswd
+Require valid-user
+
+# Сжатие (чтобы тяжёлый html отдавался сжатым ~в 8-10 раз)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
